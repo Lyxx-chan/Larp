@@ -1,11 +1,76 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Website Pertama Lyxx</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Larp Larp Larp</title>
+    <style>
+        /* Mengatur latar belakang dan posisi ke tengah layar */
+        body {
+            background-color: #0f172a;
+            color: #f8fafc;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* Membuat kotak kartu di tengah */
+        .kartu {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 16px;
+            padding: 32px 24px;
+            text-align: center;
+            max-width: 360px;
+            width: 100%;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Mengatur tulisan judul */
+        h1 {
+            color: #ef4444;
+            font-size: 26px;
+            margin-top: 0;
+            margin-bottom: 12px;
+        }
+
+        /* Mengatur tulisan paragraf */
+        p {
+            color: #94a3b8;
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 24px;
+        }
+
+        /* Mengatur desain tombol */
+        button {
+            background-color: #ef4444;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:active {
+            background-color: #dc2626;
+        }
+    </style>
 </head>
 <body>
-    <h1>Attention Larpers!</h1>
-    <p>Keep larping, cuz Nothing Ever Happens</p>
-    <button onclick="alert('LARP ALERT !!!')">Click ts</button>
+
+    <div class="kartu">
+        <h1>Attention Larpers!</h1>
+        <p>Keep larping, cuz Nothing Ever Happens</p>
+        <button onclick="alert('LARP ALERT !!!')">Click Me</button>
+    </div>
+
 </body>
 </html>
