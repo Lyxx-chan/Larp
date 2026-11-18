@@ -1,2 +1,2 @@
 # Larp
-no limit to larp
+no limit to the larp
