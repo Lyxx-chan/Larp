@@ -135,7 +135,7 @@
             transition: top 0.12s ease, left 0.12s ease;
         }
 
-        /* Ukuran minimal 200x200 agar tidak diblokir YouTube, tapi dibuat transparan */
+        /* Player YouTube transparan agar tetap diizinkan browser untuk pre-buffer */
         #yt-wrapper {
             position: fixed;
             bottom: 0;
@@ -194,7 +194,6 @@
         <button id="larpBtn" class="primary-btn">Click Me</button>
     </main>
 
-    <!-- URL resmi YouTube IFrame API -->
     <script src="https://www.youtube.com/iframe_api"></script>
     <script>
         const btn = document.getElementById('larpBtn');
@@ -218,6 +217,20 @@
                     'playsinline': 1,
                     'loop': 1,
                     'playlist': 'dQw4w9WgXcQ'
+                },
+                events: {
+                    // Pancing buffer otomatis dalam kondisi mute saat halaman terbuka
+                    'onReady': (event) => {
+                        event.target.mute();
+                        event.target.playVideo();
+                    },
+                    // Begitu data audio berhasil masuk memori, pause dan tahan di detik ke-0
+                    'onStateChange': (event) => {
+                        if (event.data === YT.PlayerState.PLAYING && !isPrankActive) {
+                            event.target.pauseVideo();
+                            event.target.seekTo(0);
+                        }
+                    }
                 }
             });
         }
